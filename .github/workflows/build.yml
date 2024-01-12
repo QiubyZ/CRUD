@@ -1,0 +1,12 @@
+name: Android CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: [ "main" ]
+    
+    
+jobs:
+    release-workflow:
+        uses: QiubyZ/ReleaseWorkflow/.github/workflows/main.yml@main
