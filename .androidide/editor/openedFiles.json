@@ -1,20 +1,35 @@
 {
   "allFiles": [
     {
+      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/costum_dialog_update.xml",
+      "selection": {
+        "end": {
+          "column": 42,
+          "index": 1652,
+          "line": 37
+        },
+        "start": {
+          "column": 42,
+          "index": 1652,
+          "line": 37
+        }
+      }
+    },
+    {
       "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/MainActivity.java",
       "selection": {
         "end": {
-          "column": 30,
-          "index": 125,
-          "line": 5
+          "column": 0,
+          "index": 0,
+          "line": 0
         },
         "start": {
-          "column": 30,
-          "index": 125,
-          "line": 5
+          "column": 0,
+          "index": 0,
+          "line": 0
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/MainActivity.java"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/costum_dialog_update.xml"
 }

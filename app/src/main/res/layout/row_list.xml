@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_margin="5dp"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="left"
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="horizontal">
+
+        <TextView
+             android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+             android:layout_width="wrap_content"
+             android:id="@+id/id_karyawan"
+             android:text="id Karyawan" />
+
+        <TextView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_weight="1"
+             android:id="@+id/nama_karyawan"
+             android:text="Nama Karyawan" />
+
+        <TextView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_weight="1"
+             android:id="@+id/nip_karyawan"
+             android:text="NIP Karyawan" />
+
+        <Button
+             android:id="@+id/update"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:text="Update" />
+
+        <Button
+             android:id="@+id/delete"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:text="Delete" />
+
+    </LinearLayout>
+
+</LinearLayout>
