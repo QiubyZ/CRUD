@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_height="wrap_content"
-        android:hint="Input Nama Karyawan">
+        android:hint="Input Nama Dosen">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_height="wrap_content"
-        android:hint="Input NIP Karyawan">
+        android:hint="Input NIP Dosen">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
