@@ -1,50 +1,20 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/costum_dialog_update.xml",
+      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/row_list.xml",
       "selection": {
         "end": {
-          "column": 42,
-          "index": 1652,
-          "line": 37
+          "column": 36,
+          "index": 2004,
+          "line": 56
         },
         "start": {
-          "column": 42,
-          "index": 1652,
-          "line": 37
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/MainActivity.java",
-      "selection": {
-        "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        },
-        "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/.github/workflows/build.yml",
-      "selection": {
-        "end": {
-          "column": 68,
-          "index": 200,
-          "line": 11
-        },
-        "start": {
-          "column": 68,
-          "index": 200,
-          "line": 11
+          "column": 36,
+          "index": 2004,
+          "line": 56
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/.github/workflows/build.yml"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/row_list.xml"
 }

@@ -1,51 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:app="http://schemas.android.com/apk/res-auto"
-     android:layout_margin="5dp"
-     android:layout_height="wrap_content"
-     android:layout_width="match_parent"
-     android:orientation="vertical">
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_margin="2dp"
+    android:orientation="vertical"
+    app:cardElevation="3dp"
+    app:cardCornerRadius="2dp">
 
     <LinearLayout
-        android:gravity="left"
-         android:layout_height="match_parent"
-         android:layout_width="match_parent"
-         android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
-             android:layout_height="match_parent"
-            android:layout_marginEnd="5dp"
-             android:layout_width="wrap_content"
-             android:id="@+id/id_karyawan"
-             android:text="id Karyawan" />
+            android:background="#747474"
+            android:gravity="center"
+            android:textSize="20px"
+            android:layout_height="match_parent"
+            android:layout_width="20dp"
+            android:padding="5dp"
+            android:textColor="#123865"
+            android:id="@+id/id_karyawan"
+            android:text="id Karyawan" />
 
         <TextView
-             android:layout_height="match_parent"
-             android:layout_width="match_parent"
-             android:layout_weight="1"
-             android:id="@+id/nama_karyawan"
-             android:text="Nama Karyawan" />
+            android:background="#559"
+            
+            android:gravity="center"
+           android:textSize="25px"
+            android:maxLines="1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+           android:padding="5dp"
+            android:layout_weight="1"
+            android:id="@+id/nama_karyawan"
+            android:text="Nama Karyawan" />
 
         <TextView
-             android:layout_height="match_parent"
-             android:layout_width="match_parent"
-             android:layout_weight="1"
-             android:id="@+id/nip_karyawan"
-             android:text="NIP Karyawan" />
+            android:gravity="center"
+            android:background="#266"
+            android:textColor="#898"
+            android:padding="5dp"
+           android:textSize="22px"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/nip_karyawan"
+            android:text="NIP Karyawan" />
 
-        <Button
-             android:id="@+id/update"
-             android:layout_height="wrap_content"
-             android:layout_width="wrap_content"
-             android:text="Update" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#555"
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
-        <Button
-             android:id="@+id/delete"
-             android:layout_height="wrap_content"
-             android:layout_width="wrap_content"
-             android:text="Delete" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="20px"
+                android:layout_weight="1"
+                android:id="@+id/update"
+                android:text="Update" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="20px"
+                android:layout_weight="1"
+                android:id="@+id/delete"
+                android:text="Delete" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>
