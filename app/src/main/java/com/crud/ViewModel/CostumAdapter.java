@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.crud.Model.ModelUserData;
 
+import com.crud.ViewModel.CostumAdapter;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.ArrayList;
 import java.util.List;
@@ -100,52 +101,71 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(CostumAdapter.ViewHolder viewmodel, int posisi) {
-        ModelUserData datakaryawan = adapter.get(viewmodel.getAdapterPosition());
+        if(viewmodel != null){
+            ModelUserData datakaryawan = adapter.get(posisi);
         KontrolDataBase kontrolDatabase = new KontrolDataBase(viewmodel.v.getContext());
-
-        viewmodel.getId_karyawan().setText(String.valueOf(datakaryawan.getID()));
-        // viewmodel.getId_karyawan().setText(String.valueOf(posisi));
+        viewmodel.getId_karyawan().setText(String.valueOf(posisi));
         viewmodel.getNama().setText(datakaryawan.getNAMA());
         viewmodel.getNip().setText(datakaryawan.getNIP());
-
+            viewmodel.setIsRecyclable(true);
         viewmodel
                 .getDelete()
                 .setOnClickListener(
                         (v) -> {
-
+                            adapter.remove(posisi);
                             // Hapus Dari Database
                             kontrolDatabase.delete(String.valueOf(datakaryawan.getID()));
 
                             // Hapus Dari ViewList
-                            adapter.remove(datakaryawan);
 
                             // TrigerPembaharuanListView
-                            notifyDataSetChanged();
-                //notifyItemRemoved(posisi);
+                    
+                            //notifyDataSetChanged();
+                        notifyDataSetChanged();
+                            
                         });
 
         viewmodel
                 .getUpdate()
                 .setOnClickListener(
                         (v) -> {
-                            new UpgradePopUp(v.getContext(), viewmodel, kontrolDatabase);
-                            
-                            notifyDataSetChanged();
-                            //notifyItemChanged(posisi);
-                            
+                            new UpgradePopUp(
+                                    v.getContext(),
+                                    datakaryawan.getNAMA(),
+                                    datakaryawan.getNIP(),
+                                    datakaryawan.getID(),
+                                    kontrolDatabase,
+                                    viewmodel);
+                            // notifyDataSetChanged();
+
                         });
+        }
+        
     }
 
     class UpgradePopUp extends AlertDialog.Builder {
         public TextInputEditText ubah_nama, ubah_nip;
-        KontrolDataBase kontrol;
-        ViewHolder viewHolder;
-        AlertDialog dialog;
+        public KontrolDataBase kontrol;
+        public CostumAdapter.ViewHolder model;
+        public AlertDialog dialog;
 
-        public UpgradePopUp(Context ctx, ViewHolder v, KontrolDataBase kontrol) {
+        public String nama;
+        public String nip;
+        public int id;
+
+        public UpgradePopUp(
+                Context ctx,
+                String nama,
+                String nip,
+                int id,
+                KontrolDataBase kontrol,
+                CostumAdapter.ViewHolder model) {
             super(ctx);
-            this.viewHolder = v;
             this.kontrol = kontrol;
+            this.nama = nama;
+            this.nip = nip;
+            this.id = id;
+            this.model = model;
             onCreate();
         }
 
@@ -156,14 +176,12 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
             setView(v);
             setCancelable(false);
             setTitle("Update Data Karyawan");
+
             ubah_nama = v.findViewById(R.id.ubah_nama);
             ubah_nip = v.findViewById(R.id.ubah_nip);
 
-            ubah_nama.setText(viewHolder.getNama().getText().toString());
-            ubah_nip.setText(String.valueOf(viewHolder.getNip().getText().toString()));
-
-            dialog = create();
-            dialog.show();
+            ubah_nama.setText(nama);
+            ubah_nip.setText(nip);
 
             v.findViewById(R.id.cancel)
                     .setOnClickListener(
@@ -173,20 +191,31 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
             v.findViewById(R.id.perbaharui)
                     .setOnClickListener(
                             (per) -> {
+                                // Update Database
                                 ModelUserData updateData = new ModelUserData();
-                                updateData.setID(
-                                        Integer.valueOf(
-                                                viewHolder.getId_karyawan().getText().toString()));
+                                updateData.setID(id);
                                 updateData.setNAMA(ubah_nama.getText().toString());
                                 updateData.setNIP(ubah_nip.getText().toString());
-                                
-                    viewHolder.getNama().setText(ubah_nama.getText().toString());
-                    viewHolder.getNip().setText(ubah_nip.getText().toString());
-                    
-                                Toast.makeText(getContext(),"Ubah ke: " + ubah_nama.getText().toString(), Toast.LENGTH_LONG).show();
-                                kontrol.Update(updateData);
+                                if (kontrol.Update(updateData)) {
+                                    Toast.makeText(
+                                                    getContext(),
+                                                    "Ditambah Ke database: "
+                                                            + ubah_nama.getText().toString(),
+                                                    Toast.LENGTH_LONG)
+                                            .show();
+                                    
+                                    //UpdateView
+                        ModelUserData ubah = adapter.get(model.getAdapterPosition());
+                        ubah.NAMA = ubah_nama.getText().toString();
+                        ubah.NIP = ubah_nip.getText().toString();
+                                    notifyDataSetChanged();
+                                }
+                                // UpdateView
+
                                 dialog.dismiss();
                             });
+            dialog = create();
+            dialog.show();
         }
     }
 }

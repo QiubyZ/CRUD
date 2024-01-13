@@ -36,7 +36,11 @@ public class KontrolDataBase extends DatabaseData {
         String where = "id = ? ";
         return getWritableDatabase().update(NAMA_TABEL, contentvalues, where, args) > 0;
     }
-
+    public String[] getbyId(int id){
+        String[] kolom = new String[3];
+        
+        return kolom;
+    }
     public List<ModelUserData> getKolom() {
         List<ModelUserData> DataKaryawan = new ArrayList<ModelUserData>();
 

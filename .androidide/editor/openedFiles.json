@@ -1,7 +1,7 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/row_list.xml",
+      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/MainActivity.java",
       "selection": {
         "end": {
           "column": 0,
@@ -16,20 +16,20 @@
       }
     },
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/activity_main.xml",
+      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/ViewModel/CostumAdapter.java",
       "selection": {
         "end": {
-          "column": 37,
-          "index": 1210,
-          "line": 27
+          "column": 46,
+          "index": 7227,
+          "line": 209
         },
         "start": {
-          "column": 37,
-          "index": 1210,
-          "line": 27
+          "column": 46,
+          "index": 7227,
+          "line": 209
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/res/layout/activity_main.xml"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/ViewModel/CostumAdapter.java"
 }
