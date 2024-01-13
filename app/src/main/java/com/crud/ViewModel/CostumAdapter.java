@@ -101,46 +101,35 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(CostumAdapter.ViewHolder viewmodel, int posisi) {
-        if(viewmodel != null){
+        if (viewmodel != null) {
             ModelUserData datakaryawan = adapter.get(posisi);
-        KontrolDataBase kontrolDatabase = new KontrolDataBase(viewmodel.v.getContext());
-        viewmodel.getId_karyawan().setText(String.valueOf(posisi));
-        viewmodel.getNama().setText(datakaryawan.getNAMA());
-        viewmodel.getNip().setText(datakaryawan.getNIP());
+            KontrolDataBase kontrolDatabase = new KontrolDataBase(viewmodel.v.getContext());
+            viewmodel.getId_karyawan().setText(String.valueOf(posisi));
+            viewmodel.getNama().setText(datakaryawan.getNAMA());
+            viewmodel.getNip().setText(datakaryawan.getNIP());
             viewmodel.setIsRecyclable(true);
-        viewmodel
-                .getDelete()
-                .setOnClickListener(
-                        (v) -> {
-                            adapter.remove(posisi);
-                            // Hapus Dari Database
-                            kontrolDatabase.delete(String.valueOf(datakaryawan.getID()));
+            viewmodel
+                    .getDelete()
+                    .setOnClickListener(
+                            (v) -> {
 
-                            // Hapus Dari ViewList
+                                // Hapus Dari ViewList
 
-                            // TrigerPembaharuanListView
-                    
-                            //notifyDataSetChanged();
-                        notifyDataSetChanged();
-                            
-                        });
+                                adapter.remove(posisi);
 
-        viewmodel
-                .getUpdate()
-                .setOnClickListener(
-                        (v) -> {
-                            new UpgradePopUp(
-                                    v.getContext(),
-                                    datakaryawan.getNAMA(),
-                                    datakaryawan.getNIP(),
-                                    datakaryawan.getID(),
-                                    kontrolDatabase,
-                                    viewmodel);
-                            // notifyDataSetChanged();
+                                // Hapus Dari Database
+                                kontrolDatabase.delete(String.valueOf(datakaryawan.getID()));
 
-                        });
+                                notifyDataSetChanged();
+                            });
+
+            viewmodel
+                    .getUpdate()
+                    .setOnClickListener(
+                            (v) -> {
+                                new UpgradePopUp(v.getContext(), datakaryawan, kontrolDatabase);
+                            });
         }
-        
     }
 
     class UpgradePopUp extends AlertDialog.Builder {
@@ -149,23 +138,14 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
         public CostumAdapter.ViewHolder model;
         public AlertDialog dialog;
 
-        public String nama;
-        public String nip;
-        public int id;
+        public ModelUserData datakaryawan;
+        public int posisi;
 
-        public UpgradePopUp(
-                Context ctx,
-                String nama,
-                String nip,
-                int id,
-                KontrolDataBase kontrol,
-                CostumAdapter.ViewHolder model) {
+        public UpgradePopUp(Context ctx, ModelUserData datakaryawan, KontrolDataBase kontrol) {
             super(ctx);
             this.kontrol = kontrol;
-            this.nama = nama;
-            this.nip = nip;
-            this.id = id;
-            this.model = model;
+            this.datakaryawan = datakaryawan;
+
             onCreate();
         }
 
@@ -180,8 +160,8 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
             ubah_nama = v.findViewById(R.id.ubah_nama);
             ubah_nip = v.findViewById(R.id.ubah_nip);
 
-            ubah_nama.setText(nama);
-            ubah_nip.setText(nip);
+            ubah_nama.setText(datakaryawan.getNAMA());
+            ubah_nip.setText(datakaryawan.getNIP());
 
             v.findViewById(R.id.cancel)
                     .setOnClickListener(
@@ -193,7 +173,7 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
                             (per) -> {
                                 // Update Database
                                 ModelUserData updateData = new ModelUserData();
-                                updateData.setID(id);
+                                updateData.setID(datakaryawan.getID());
                                 updateData.setNAMA(ubah_nama.getText().toString());
                                 updateData.setNIP(ubah_nip.getText().toString());
                                 if (kontrol.Update(updateData)) {
@@ -203,15 +183,13 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
                                                             + ubah_nama.getText().toString(),
                                                     Toast.LENGTH_LONG)
                                             .show();
-                                    
-                                    //UpdateView
-                        ModelUserData ubah = adapter.get(model.getAdapterPosition());
-                        ubah.NAMA = ubah_nama.getText().toString();
-                        ubah.NIP = ubah_nip.getText().toString();
+
+                                    // UpdateView
+                                    datakaryawan.NAMA = ubah_nama.getText().toString();
+                                    datakaryawan.NIP = ubah_nip.getText().toString();
                                     notifyDataSetChanged();
                                 }
-                                // UpdateView
-
+                                // KeluarDialog
                                 dialog.dismiss();
                             });
             dialog = create();
