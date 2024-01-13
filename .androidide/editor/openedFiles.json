@@ -16,20 +16,35 @@
       }
     },
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/ViewModel/CostumAdapter.java",
+      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/Modeldb/DatabaseData.java",
       "selection": {
         "end": {
-          "column": 62,
-          "index": 3133,
-          "line": 108
+          "column": 0,
+          "index": 0,
+          "line": 0
         },
         "start": {
-          "column": 62,
-          "index": 3133,
-          "line": 108
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/Modeldb/KontrolDataBase.java",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/ViewModel/CostumAdapter.java"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/Modeldb/KontrolDataBase.java"
 }

@@ -3,7 +3,6 @@ package com.crud.Modeldb;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.crud.Modeldb.DatabaseData;
 
 public class DatabaseData extends SQLiteOpenHelper {
     

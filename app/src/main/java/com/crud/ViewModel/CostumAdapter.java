@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.crud.Model.ModelUserData;
 
-import com.crud.ViewModel.CostumAdapter;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.ArrayList;
 import java.util.List;
