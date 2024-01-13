@@ -107,7 +107,6 @@ public class CostumAdapter extends RecyclerView.Adapter<CostumAdapter.ViewHolder
             viewmodel.getId_karyawan().setText(String.valueOf(posisi));
             viewmodel.getNama().setText(datakaryawan.getNAMA());
             viewmodel.getNip().setText(datakaryawan.getNIP());
-            viewmodel.setIsRecyclable(true);
             viewmodel
                     .getDelete()
                     .setOnClickListener(
