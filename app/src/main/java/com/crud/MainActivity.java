@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 (v) -> {
                     DataKaryawan.clear();
                     binding.recyclerView.removeAllViews();
-                    Database_Karyawan.clear();
+                    Database_Karyawan.clear(); 
                 });
     }
 

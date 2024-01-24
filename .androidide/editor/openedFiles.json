@@ -1,50 +1,20 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/MainActivity.java",
+      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/ViewModel/CostumAdapter.java",
       "selection": {
         "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
+          "column": 31,
+          "index": 5473,
+          "line": 140
         },
         "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/Modeldb/DatabaseData.java",
-      "selection": {
-        "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        },
-        "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/Modeldb/KontrolDataBase.java",
-      "selection": {
-        "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        },
-        "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
+          "column": 31,
+          "index": 5473,
+          "line": 140
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/Modeldb/KontrolDataBase.java"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/CRUD/app/src/main/java/com/crud/ViewModel/CostumAdapter.java"
 }
