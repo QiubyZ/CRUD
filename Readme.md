@@ -1,5 +1,5 @@
 # CRUD
-CRUD Kepanjangan Dari CREATE, READ, UPDATE, DELETE adalah Pengetahuan dasar yang dipelajari untuk menangani pembuatan, membaca, memperbaharui dan menghapus item pada database.
+CRUD Singkatan Dari CREATE, READ, UPDATE, DELETE adalah Pengetahuan dasar yang dipelajari untuk menangani pembuatan, membaca, memperbaharui dan menghapus item pada database.
 
 # Tentang Aplikasi
 
